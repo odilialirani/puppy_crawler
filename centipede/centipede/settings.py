@@ -55,6 +55,11 @@ ROBOTSTXT_OBEY = True
 #DOWNLOADER_MIDDLEWARES = {
 #    'centipede.middlewares.CentipedeDownloaderMiddleware': 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware': None,
+}
+HTTP_RETRY_CODES = [404, 303, 304]
+RETRY_TIMES = 20
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
